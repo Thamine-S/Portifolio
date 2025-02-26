@@ -90,22 +90,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
         });
-        
-
-        const swiper = new Swiper('.swiper', {
-            // Opções do Swiper
-            loop: true, // Para o carrossel ser infinito
-            pagination: {
-                el: '.swiper-pagination', // Elemento de paginação
-                clickable: true // Permitir clicar nas bolinhas de paginação
-            },
-            navigation: {
-                nextEl: '.swiper-button-next', // Botão de navegação para o próximo slide
-                prevEl: '.swiper-button-prev' // Botão de navegação para o slide anterior
-            },
-    });
-    });
-
-    
 
 });
+});
+
+document.querySelectorAll(".box").forEach(box => {
+    const color = box.getAttribute("data-color");
+    box.style.setProperty("--box-gradient", color);
+  }); 
