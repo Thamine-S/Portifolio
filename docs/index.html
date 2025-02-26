@@ -13,17 +13,76 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-        
+<!-- Place in your HTML file between the <head> tags -->
+
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link href='https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap' rel='stylesheet' type='text/css'>
 
 </head>
 
 <section>
 
     <nav>
-        <a href="#sobre-mim">About me</a>
-        <a href="#projetos">Projects</a>
-        <a href="#habilidades">Skills</a>
-        <a href="#contato">Contact me</a>
+      <div class="parent-nav">
+      <div class="switch-container">
+        <label for="language-switch"></label>
+        <label class="switch">
+            <input type="checkbox" id="language-switch">
+            <span class="slider"></span>
+        </label>
+        <p data-translate="lenguage">EN</p>
+    </div>
+    <script>
+      const translations = {
+          "pt": {
+              "lenguage": "PT-BR",
+              "title": "Olá, eu sou",
+              "subtitle": "E esse é o meu portifólio.",
+              "about-me": "Sobre mim",
+              "projects": "Projetos",
+              "skills": "Habilidades",
+              "contact-me": "Contato",
+              "about-me-text": "Sou uma estudante de Tecnologia da Informação com grande curiosidade em resolver problemas e explorar novas tecnologias. Minha jornada na tecnologia foi impulsionada pelo amor pela codificação, pelo desenvolvimento de sistemas e pelo aprendizado contínuo. Gosto de trabalhar em projetos que me desafiem a pensar criticamente e aplicar soluções inovadoras. Seja desenvolvimento de software, segurança cibernética ou análise de dados, estou sempre ansiosa para expandir meus conhecimentos e aprimorar minhas habilidades. Atualmente, estou focada em adquirir experiência prática por meio de projetos e aprender com aplicações do mundo real. Meu objetivo é contribuir com soluções tecnológicas significativas e, ao mesmo tempo, crescer como profissional no setor.",
+              "project-dashboard-title": "Dashboard Finanças",
+              "project-essay-corrector-title": "Corretor de Redação",
+              "project-menu-title": "Cardápio Madalena's Kitchen"
+
+
+
+          },
+          "en": {
+              "lenguage": "EN",
+              "title": "Hi, I am",
+              "subtitle": "And this is my portifolio.",
+              "about-me": "About me",
+              "projects": "Projects",
+              "skills": "Skills",
+              "contact-me": "Contact me",
+              "about-me-text": "I'm a passionate Information Technology student with a strong curiosity for solving problems and exploring new technologies. My journey in tech has been driven by a love for coding, system development, and continuous learning. I enjoy working on projects that challenge me to think critically and apply innovative solutions. Whether it's software development, cybersecurity, or data analysis, I’m always eager to expand my knowledge and improve my skills. Currently, I'm focused on gaining hands-on experience through projects and learning from real-world applications. My goal is to contribute to meaningful tech solutions while growing as a professional in the industry.",
+              "project-dashboard-title": "Finance Dashboard",
+              "project-essay-corrector-title": "Essay proofreader",
+              "project-menu-title": "Madalena's Kitchen Menu",
+          }
+      };
+
+      const switcher = document.getElementById("language-switch");
+      let currentLanguage = "pt";
+
+      switcher.addEventListener("change", () => {
+          currentLanguage = switcher.checked ? "pt" : "en";
+          document.querySelectorAll("[data-translate]").forEach(el => {
+              const key = el.getAttribute("data-translate");
+              el.textContent = translations[currentLanguage][key];
+          });
+      });
+  </script>
+  <div class="div2-nav">
+        <a href="#sobre-mim" data-translate="about-me">About me</a>
+        <a href="#projetos" data-translate="projects">Projects</a>
+        <a href="#habilidades" data-translate="skills">Skills</a>
+        <a href="#contato" data-translate="contact-me">Contact me</a>
+      </div>
+    </div>
     </nav>
 
 
@@ -36,7 +95,7 @@
     <div class="div1"  id="header-text">         
         <div class="wrapper">
             <svg>
-                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                <text x="50%" y="50%" dy=".35em" text-anchor="middle" data-translate="title">
                     Hi, I am 
                 </text>
             </svg>
@@ -50,7 +109,7 @@
                 <div class="aurora__item"></div>
               </div>
             </h1>
-            <p class="subtitle">And this is my portifolio.</p>
+            <p class="subtitle" data-translate="subtitle">And this is my portifolio.</p>
           </div>
     </div>
     <div class="div2">
@@ -65,30 +124,31 @@
         
     
     <section id="sobre-mim">
-        <h1>About me</h1>
+        <h1 data-translate="about-me">About me</h1>
 <div class="parent-sobre-mim">
     <div class="div1-sobre-mim">
-       <!--- <p>Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...Texto sobre você aqui...</p>
-   --->
+        <p data-translate="about-me-text">I'm a passionate Information Technology student with a strong curiosity for solving problems and exploring new technologies. My journey in tech has been driven by a love for coding, system development, and continuous learning. I enjoy working on projects that challenge me to think critically and apply innovative solutions. Whether it's software development, cybersecurity, or data analysis, I’m always eager to expand my knowledge and improve my skills. Currently, I'm focused on gaining hands-on experience through projects and learning from real-world applications. My goal is to contribute to meaningful tech solutions while growing as a professional in the industry.</p>
     </div>
-    <div class="div2-sobre-mim">2</div>
+    <div class="div2-sobre-mim">
+
+    </div>
 </div>
 
     </section>
 
     <section id="projetos">
 
-        <h2>Projects</h2>
+        <h2 data-translate="projects">Projects</h2>
         <div class="parent-projetos">
           <!-- Card 1 -->
           <div class="div1-projetos">
             <div class="container">
-              <div class="box">
+              <div class="box box-finance">
                 <span></span>
                 <div class="content">
-                  <h2>Card one</h2>
+                  <h2 data-translate="project-dashboard-title">Finance Dashboard</h2>
                   <img src="" alt="imagem">
-                  <p>Em Desenvolvimento</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <a href="#" class="read-more" data-modal="modal1">Read More</a>
                 </div>
               </div>
@@ -97,12 +157,12 @@
           <!-- Card 2 -->
           <div class="div2-projetos">
             <div class="container">
-              <div class="box">
+              <div class="box box-corretor">
                 <span></span>
                 <div class="content">
-                  <h2>Card two</h2>
+                  <h2 data-translate="project-essay-corrector-title">Essay proofreader</h2>
                   <img src="" alt="imagem">
-                  <p>Em Desenvolvimento</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <a href="#" class="read-more" data-modal="modal2">Read More</a>
                 </div>
               </div>
@@ -111,12 +171,12 @@
           <!-- Card 3 -->
           <div class="div3-projetos">
             <div class="container">
-              <div class="box">
+              <div class="box box-cardapio">
                 <span></span>
                 <div class="content">
-                  <h2>Card three</h2>
+                  <h2 data-translate="project-menu-title">Madalena's Kitchen Menu</h2>
                   <img src="" alt="imagem">
-                  <p>Em Desenvolvimento</p>
+                  <p>Desenvolvimento de um cardápio digital estático.</p>
                   <a href="#" class="read-more" data-modal="modal3">Read More</a>
                 </div>
               </div>
@@ -188,7 +248,7 @@
     </section>
 
     <section id="habilidades">
-        <h2>Skills</h2>
+        <h2 data-translate="skills">Skills</h2>
     
         <img src="assets\python_icon.png" alt="Python" >
         <img src="assets\html_icon.png" alt="HTML" >
@@ -207,7 +267,7 @@
 
         <section id="contato">
         <footer>
-            <h2>Contact me</h2>
+            <h2 data-translate="contact-me">Contact me</h2>
 
 
               <ul class="contato">
@@ -234,3 +294,4 @@
     
 </body>
 </html>
+
