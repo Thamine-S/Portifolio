@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Turret+Road&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+IT+Moderna:wght@100..400&family=Quicksand:wght@500&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 
 
@@ -49,7 +50,7 @@ header {
 
 .parent-nav {
   display: grid;
-  grid-template-columns: repeat(0, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(0, 1fr);
   gap: 8px;
 }
@@ -210,7 +211,7 @@ header h2 {
 .parent-projetos {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 8px;
 }
   
@@ -229,7 +230,9 @@ header h2 {
   grid-column-start: 4;
 }
       
-   
+.img-card {
+  width: 125px;
+}
 
 .container
 {
@@ -468,7 +471,14 @@ header h2 {
           position: relative;
           border-radius: 4px;
         }
-        
+      
+
+.tecnologias {
+  padding-top: 0px !important;
+  display: flex;
+  column-gap: 10px;
+}
+
         /* Botão de fechar */
         .close {
           position: absolute;
@@ -654,11 +664,10 @@ footer {
   
   .title {
     font-size: var(--fs);
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: var(--ls);
     position: relative;
     overflow: hidden;
-    background: var(--bg);
     margin: 0;
   }
   
