@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="modal_menu.css">
     <title>Thamine's Portifolio</title>
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -45,7 +46,20 @@
               "about-me-text": "Sou uma estudante de Tecnologia da Informação com grande curiosidade em resolver problemas e explorar novas tecnologias. Minha jornada na tecnologia foi impulsionada pelo amor pela codificação, pelo desenvolvimento de sistemas e pelo aprendizado contínuo. Gosto de trabalhar em projetos que me desafiem a pensar criticamente e aplicar soluções inovadoras. Seja desenvolvimento de software, segurança cibernética ou análise de dados, estou sempre ansiosa para expandir meus conhecimentos e aprimorar minhas habilidades. Atualmente, estou focada em adquirir experiência prática por meio de projetos e aprender com aplicações do mundo real. Meu objetivo é contribuir com soluções tecnológicas significativas e, ao mesmo tempo, crescer como profissional no setor.",
               "project-dashboard-title": "Dashboard Finanças",
               "project-essay-corrector-title": "Corretor de Redação",
-              "project-menu-title": "Cardápio Madalena's Kitchen"
+              "project-menu-title": "Cardápio Madalena's Kitchen",
+              "project-menu-objective-title": "Objetivo do Projeto",
+              "project-menu-objective-text": " Este projeto foi desenvolvido para criar um menu online interativo para uma loja especializada em geleias, compotas e geladinhos artesanais. O objetivo principal foi proporcionar aos clientes uma experiência digital intuitiva, permitindo que explorem os produtos de forma prática e visualmente agradável.",
+              "project-menu-funcionalities-title": "Funcionalidades Principais",
+              "project-menu-funcionalities-text1": "Catálogo Digital: Exibição organizada dos produtos com imagens, descrições e preços.",
+              "project-menu-funcionalities-text2": "Categorias: Opções para navegar entre os produtos, por meio da barra de navegação.",
+              "project-menu-funcionalities-text3": "Detalhes dos Produtos: Informações sobre ingredientes, sabores disponíveis e sugestões de consumo.",
+              "project-menu-funcionalities-text4": "Design Responsivo: Compatibilidade com dispositivos móveis e desktops para uma navegação fluida.",
+              "project-menu-benefits-title": "Benefícios do Projeto",
+              "project-menu-benefits-text1":"Maior Alcance e Visibilidade: Clientes podem acessar o menu de qualquer lugar e conhecer os produtos sem precisar ir até a loja física.",
+              "project-menu-benefits-text2":"Melhor Experiência do Usuário: Interface intuitiva que valoriza os produtos e facilita a navegação.",
+               "project-menu-benefits-text3":"Destaque para o Negócio: Um menu online profissional transmite credibilidade e moderniza a presença digital da loja." ,
+              "project-menu-final-title": "Considerações Finais",
+              "project-menu-final-text": "O desenvolvimento deste menu online demonstra minha capacidade de criar soluções digitais personalizadas para pequenos negócios. O projeto combina um design atraente com funcionalidades que otimizam a experiência do cliente e impulsionam as vendas. ",
 
 
 
@@ -62,6 +76,21 @@
               "project-dashboard-title": "Finance Dashboard",
               "project-essay-corrector-title": "Essay proofreader",
               "project-menu-title": "Madalena's Kitchen Menu",
+              "project-menu-objective-title": "Project Objective",
+              "project-menu-objective-text": " This project was developed to create an interactive online menu for a store specializing in handmade products. The main objective was to provide customers with an intuitive digital experience, allowing them to explore the products in a practical and visually pleasing way.",
+              "project-menu-funcionalities-title": "Main Features",
+              "project-menu-funcionalities-text1": "Digital Catalog: Organized display of products with images, descriptions and prices.",
+              "project-menu-funcionalities-text2": "Categories: Options for browsing products.",
+              "project-menu-funcionalities-text3": "Product Details: Information on ingredients, available flavors and consumption suggestions.",
+              "project-menu-funcionalities-text4": "Responsive Design: Compatibility with mobile devices and desktops for fluid navigation.",
+              "project-menu-benefits-title": "Project Benefits",
+              "project-menu-benefits-text1":"Greater Reach and Visibility: Customers can access the menu from anywhere and learn about the products without having to go to the physical store.",
+             "project-menu-benefits-text2":"Best User Experience: Intuitive interface that enhances products and facilitates navigation.",
+              "project-menu-benefits-text3":"Business Highlight: A professional online menu conveys credibility and modernizes the store's digital presence.",
+              "project-menu-final-title": "Final Considerations",
+              "project-menu-final-text": "The development of this online menu demonstrates my ability to create customized digital solutions for small businesses. The project combines an attractive design with features that optimize the customer experience and drive sales.",
+
+
           }
       };
 
@@ -152,7 +181,7 @@
                   <a href="#" class="read-more" data-modal="modal1">Read More</a>
                 </div>
               </div>
-            </div>
+            </div>   
           </div>
           <!-- Card 2 -->
           <div class="div2-projetos">
@@ -175,8 +204,8 @@
                 <span></span>
                 <div class="content">
                   <h2 data-translate="project-menu-title">Madalena's Kitchen Menu</h2>
-                  <img src="" alt="imagem">
-                  <p>Desenvolvimento de um cardápio digital estático.</p>
+                  <img class="img-card" src="assets\icon-card-menu.png" alt="imagem">
+                  <p data-translate= "project-menu-subtitle"></p>
                   <a href="#" class="read-more" data-modal="modal3">Read More</a>
                 </div>
               </div>
@@ -205,10 +234,65 @@
     
       <!-- Modal do Card 3 -->
       <div id="modal3" class="modal">
-        <div class="modal-content">
+        <div class="modal-content-menu">
           <span class="close" data-modal="modal3">&times;</span>
-          <h2>Detalhes do Card Three</h2>
-          <p>Aqui estão mais informações sobre o Card Three. Você pode incluir textos, imagens ou qualquer outro conteúdo.</p>
+          <h2 class="title-modal-menu" data-translate="project-menu-title">Madalena's Kitchen Menu</h2>
+          <div class="tecnologias">
+          <p class="tech-modal-menu" style="  background-color: #f6d3d3;   color: #df5656;   box-shadow: 5px 4px 0px 0px rgb(210, 130, 130);">HTML</p>
+          <p class="tech-modal-menu" style="  background-color: #d3d9f6;   color: #5668df;   box-shadow: 5px 4px 0px 0px rgb(135, 130, 210);">CSS</p>
+          <p class="tech-modal-menu" style="  background-color: #f6edd3;   color: #ddb335;   box-shadow: 5px 4px 0px 0px rgb(210, 190, 130);">Java Script</p>
+          <p class="tech-modal-menu" style="  background-color: #e9e9e9;   color: #4c4c4c;   box-shadow: 5px 4px 0px 0px rgb(177, 177, 177);">Figma</p>
+          <p class="tech-modal-menu" style="  background-color: #e9edff;   color: #6c77c1;   box-shadow: 5px 4px 0px 0px rgb(135, 130, 210);">Swiper</p>
+          <p class="tech-modal-menu" style="  background-color: #cdcdcd;   color: #4c4c4c;   box-shadow: 5px 4px 0px 0px rgb(177, 177, 177);">GitHub</p>
+
+
+
+        </div>
+        <div class="text-modal-menu">
+        <h2 data-translate="project-menu-objective-title">Project Objective</h2>         
+          <p data-translate="project-menu-objective-text">This project was developed to create an interactive online menu for a store specializing in handmade products. The main objective was to provide customers with an intuitive digital experience, allowing them to explore the products in a practical and visually pleasing way.</p>
+      </div>
+       <div>   
+<div class="parent-modal-menu">
+  <div class="div1-modal-menu"> 
+    <h2 data-translate="project-menu-funcionalities-title">Main Features</h2>      
+    <ul class= "ul-reset">
+      <li  data-translate="project-menu-funcionalities-text1">Digital Catalog: Organized display of products with images, descriptions and prices.</li>
+      <li  data-translate="project-menu-funcionalities-text2">Categories: Options for browsing products.</li>
+      <li  data-translate="project-menu-funcionalities-text3">Product Details: Information on ingredients, available flavors and consumption suggestions.</li>
+      <li  data-translate="project-menu-funcionalities-text4">Responsive Design: Compatibility with mobile devices and desktops for fluid navigation.</li>
+
+    </ul>   
+    <h2 data-translate="project-menu-benefits-title">Project Benefits</h2>   
+    <ul class= "ul-reset">
+      <li  data-translate="project-menu-benefits-text1">Greater Reach and Visibility: Customers can access the menu from anywhere and learn about the products without having to go to the physical store.</li>
+      <li  data-translate="project-menu-benefits-text2">Best User Experience: Intuitive interface that enhances products and facilitates navigation.</li>
+      <li  data-translate="project-menu-benefits-text3">Business Highlight: A professional online menu conveys credibility and modernizes the store's digital presence.</li>
+    </ul>   
+    <h2 data-translate="project-menu-final-title" >Final Considerations</h2>         
+    <p data-translate="project-menu-final-text">The development of this online menu demonstrates my ability to create customized digital solutions for small businesses. The project combines an attractive design with features that optimize the customer experience and drive sales.</p>
+
+  </div>
+  <div class="div2-modal-menu">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<swiper-container>
+  <swiper-slide><img class="foto-modal-menu" src="assets\print-projetos\menu-mada4.jpg" alt=""></swiper-slide>
+  <swiper-slide><img class="foto-modal-menu" src="assets\print-projetos\menu-mada3.jpg" alt=""></swiper-slide>
+  <swiper-slide><img class="foto-modal-menu" src="assets\print-projetos\menu-mada2.jpg" alt=""></swiper-slide>
+  <swiper-slide><img class="foto-modal-menu" src="assets\print-projetos\menu-mada1.jpg" alt=""></swiper-slide>
+</swiper-container>
+  </div>
+</div>
+ 
+
+          <ul class="botao-modal">
+          <li style="--i:#765e4d;--j:#442c1b" onclick="window.open('https://github.com/Thamine-S/Menu-Madalena-s-Kitchen', '_blank')">
+            <span class="icon"><ion-icon name="logo-github" ></ion-icon></span>
+            <span class="title">Github Repo</span>
+            <li style="--i:#e1cbaf;--j:#e5b87c" onclick="window.open('https://claricelis.github.io/Menu-Madalena-s-Kitchen/', '_blank')">
+              <span class="icon"><ion-icon name="browsers-outline"></ion-icon></span>
+              <span class="title">Page</span>
+          </ul></div>
         </div>
       </div>
     
