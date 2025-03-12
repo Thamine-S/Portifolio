@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Orbitron:wght@400..900&family=Poiret+One&display=swap');
+
+.img-dash-card {
+  width: 300px;
+}
+
+
+.dash-text {
+    font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tecnologias-modal-dash {
+  text-align: center;
+    border-radius: 20px;
+    column-gap: 10px;
+    padding: 4px;
+}
+
+.tech-modal-dash {
+  text-align: center;
+    background-color: rgba(198, 198, 198, 0.441);
+    width: fit-content !important;
+    padding: 4px;
+    border: none !important;
+    border-radius: 10px;
+}
+   
+
+.myGrad {
+  background-image: url('assets\\modal-dash.png'); /* URL da imagem de fundo */
+    background-size: cover; /* Cobre todo o espaço do contêiner */
+    background-position: bottom; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat;
+        color: #000;
+        margin: 10% auto;
+        padding: 20px;
+        border: none;
+        width: 100%;
+        max-width: 900px;
+        position: relative;
+        border-radius: 4px;
+      }
+
+.myGrad h2 {
+  text-align: center;
+  font-size: 35px;
+    font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.myGrad p {
+    background-color: rgba(198, 198, 198, 0.441);
+    padding: 10px;
+    border-radius: 20px;
+    border: white 1px solid;
+
+}
+
+.myGrad h2, h3, p {
+    color: white;
+}
+
+
+.myGrad {
+  overflow: hidden;
+  position: relative;
+}
+
+.myGrad::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2000px;
+  background: radial-gradient(
+    circle, 
+    rgb(146, 161, 248) 0%, 
+    rgb(250, 112, 211) 20%, 
+    rgb(242, 225, 140) 60%, 
+    rgb(16, 235, 177) 80%, 
+    rgb(43, 53, 242) 100%
+  );
+  animation: anime 30s infinite ease-in-out;
+  z-index: 0;
+}
+
+.myGrad * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes anime {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -1000px;
+  }
+  100% {
+    top: 0;
+  }
+}
