@@ -297,7 +297,7 @@ header h2 {
 .container .box-finance:before,
 .container .box-finance:after
 {
-  background: linear-gradient(315deg, #ffbc00, #ff0058)
+  background: linear-gradient(315deg, #73f2aa, #42a0f2, #bb71f8)
 }
 
 .container .box-corretor:before,
@@ -461,9 +461,9 @@ header h2 {
         
         /* Conteúdo do modal */
         .modal-content {
-          color: #000;
-          background-color: #fff;
-          margin: 10% auto;
+                  color: #000;
+        background-color: white;      
+            margin: 10% auto;
           padding: 20px;
           border: 1px solid #888;
           width: 80%;
@@ -551,15 +551,15 @@ footer {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   border-radius: 60px;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
+  justify-content: center !important; 
+  align-items: center !important;
   transition: 0.5s;
   }
   
   ul li::before {
   content: "";
-  position: absolute;
+  position: absolute !important;
   inset: 0;
   border-radius: 60px;
   background: linear-gradient(45deg, var(--i), var(--j));
@@ -608,7 +608,7 @@ footer {
   }
   
   ul li span {
-  position: absolute;
+  position: absolute !important;
   }
   
   ul li .title {
