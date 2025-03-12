@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+     <link rel="stylesheet" href="modal_dash.css">
     <script src="script.js"></script>
     <link rel="stylesheet" href="modal_menu.css">
+   
+
     <title>Thamine's Portifolio</title>
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -60,6 +63,7 @@
                "project-menu-benefits-text3":"Destaque para o Negócio: Um menu online profissional transmite credibilidade e moderniza a presença digital da loja." ,
               "project-menu-final-title": "Considerações Finais",
               "project-menu-final-text": "O desenvolvimento deste menu online demonstra minha capacidade de criar soluções digitais personalizadas para pequenos negócios. O projeto combina um design atraente com funcionalidades que otimizam a experiência do cliente e impulsionam as vendas. ",
+              "project-dashboard-aviso": "Projeto ainda em desenvolvimento, para visualizar o processo de organização do projeto, clique no botão abaixo."
 
 
 
@@ -89,7 +93,7 @@
               "project-menu-benefits-text3":"Business Highlight: A professional online menu conveys credibility and modernizes the store's digital presence.",
               "project-menu-final-title": "Final Considerations",
               "project-menu-final-text": "The development of this online menu demonstrates my ability to create customized digital solutions for small businesses. The project combines an attractive design with features that optimize the customer experience and drive sales.",
-
+              "project-dashboard-aviso": "Project still under development, to view the development organization process, press the button below."
 
           }
       };
@@ -175,9 +179,9 @@
               <div class="box box-finance">
                 <span></span>
                 <div class="content">
-                  <h2 data-translate="project-dashboard-title">Finance Dashboard</h2>
-                  <img src="" alt="imagem">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <h2 class="dash-text">Bright Balance</h2>
+                  <img class="img-dash-card" src="assets\dash-card.png" alt="imagem">
+                  <p class="dash-text">Financial Dashboard</p>
                   <a href="#" class="read-more" data-modal="modal1">Read More</a>
                 </div>
               </div>
@@ -191,7 +195,7 @@
                 <div class="content">
                   <h2 data-translate="project-essay-corrector-title">Essay proofreader</h2>
                   <img src="" alt="imagem">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p></p>
                   <a href="#" class="read-more" data-modal="modal2">Read More</a>
                 </div>
               </div>
@@ -216,10 +220,22 @@
     
       <!-- Modal do Card 1 -->
       <div id="modal1" class="modal">
-        <div class="modal-content">
+        <div class="myGrad">
           <span class="close" data-modal="modal1">&times;</span>
-          <h2>Detalhes do Card One</h2>
-          <p>Aqui estão mais informações sobre o Card One. Você pode incluir textos, imagens ou qualquer outro conteúdo.</p>
+          <h2 class="content-dash">Bright Balance</h2>
+          <div class="tecnologias-dash">
+            <p class="tech-modal-dash"  >HTML | CSS | JS | Vue | Chart.js | Plotly.js | Python | Flask | API Rest</p>
+          </div>
+          <h3 data-translate="project-dashboard-title">Finance Dashboard</h3>
+          <p data-translate="project-dashboard-aviso">Project still under development, to view the development organization process, press the button below.</p>
+          <ul class="contato">
+            <!--<li style="--i:#765e4d;--j:#442c1b" onclick="window.open('https://github.com/Thamine-S/Menu-Madalena-s-Kitchen', '_blank')">
+              <span class="icon"><ion-icon name="logo-github" ></ion-icon></span>
+              <span class="title">Github Repo</span>--->
+              <li style="--i:#fdf4da70;--j:#ecd614" onclick="window.open('https://miro.com/app/board/uXjVKMtzlK8=/?share_link_id=920601873404', '_blank')">
+                <span class="icon"><ion-icon name="sparkles-outline"></ion-icon></span>
+                <span class="title">Miro</span>
+            </ul>
         </div>
       </div>
     
@@ -347,8 +363,6 @@
         <img src="assets\photoshop_icon.png" alt="Photoshop" >
         <img src="assets\VSCode.png" alt="Visual Studio Code" >
         <img src="assets\Power BI.png" alt="Power BI" >
-        <img src="assets\Flask.png" alt="Flask" >
-        <img src="assets\Vue.png" alt="Vue" >
 
 </section>
 
@@ -382,3 +396,4 @@
     
 </body>
 </html>
+
