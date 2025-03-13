@@ -191,6 +191,10 @@ header h2 {
 }
 
 #sobre-mim h1 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   font-size: 25px;
   padding: 20px;
 }
@@ -202,6 +206,10 @@ header h2 {
 }
 
 #projetos h2 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
     margin: 40px;
     text-align: center;
 }
@@ -297,7 +305,7 @@ header h2 {
 .container .box-finance:before,
 .container .box-finance:after
 {
-  background: linear-gradient(315deg, #73f2aa, #bb71f8)
+  background: linear-gradient(315deg, #73f2aa, #42a0f2, #bb71f8)
 }
 
 .container .box-corretor:before,
@@ -494,7 +502,12 @@ header h2 {
           color: #000;
         }
 
-
+  #habilidades h2 {
+    font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  }
 
 /* Seção Habilidades */
 #habilidades {
@@ -525,6 +538,12 @@ footer {
     min-width: 1000px ;
 }
 
+footer h2 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
   
   .contato {
     margin: 0;
