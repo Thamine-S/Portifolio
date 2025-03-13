@@ -3,7 +3,7 @@
     width: 350px;
   }
 
-  .tech-modal-menu{
+  .tech-modal-menu {
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -38,7 +38,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 8px;
-    color: #9f9996;
+    color: #9f9996 ;
     background-color: #ffffff;
     border-radius: 20px ;
     padding: 15px;
@@ -66,7 +66,7 @@
 
   .text-modal-menu {
     text-align: justify;
-    color: #9f9996;
+    color: #9f9996 !important;
     background-color: #ffffff;
     border-radius: 20px ;
     padding-top: 0 !important;
@@ -79,6 +79,17 @@
     font-size: 14px;
     font-style: normal;
   }
+
+  .text-modal-menu-real {
+    text-align: justify;
+    color: #9f9996 !important;
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: normal;
+  }
+
 
   .modal-header-menu{
     display: flex;
@@ -110,13 +121,13 @@
 
 .ul-reset {
   display: block;
-  position: static;
+  position: static !important;
   gap: 0px;
 
 }
 
 .ul-reset li {
-  position: static;
+  position: static !important;
   list-style: disc;
   width: auto;
   height: auto;
@@ -127,17 +138,18 @@
   display: list-item;
   justify-content: initial;
   align-items: initial;
-  transition: none;
+  transition: none !important;
 }
 
 .ul-reset li::before,
 .ul-reset li::after {
   content: none;
-  position: static;
+  position: static !important;
 
 }
 
 .ul-reset {
-  margin-right: 10px;
+  margin-right: 5px;
 }
+
 
