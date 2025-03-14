@@ -220,7 +220,7 @@ header h2 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 8px;
+  gap: 35px;
 }
   
 .div1-projetos {
@@ -311,7 +311,7 @@ header h2 {
 .container .box-corretor:before,
 .container .box-corretor:after
 {
-  background: linear-gradient(315deg, #03a9f4, #ff0058)
+  background: linear-gradient(315deg,#d5a47a , #f9e0cf,#edb290, #f9e0cf , #d5a47a)
 }
 
 .container .box-cardapio:before,
@@ -901,6 +901,8 @@ svg text {
 .wrapper {background-color: #ffffff00};
 
         
+
+
 
 
 
