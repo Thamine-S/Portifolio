@@ -167,10 +167,8 @@ header h2 {
 }
 
 .div2-sobre-mim {
-    margin: 20px;
-    background-color: #d8d6d62c;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.484);
-    border-radius: 20px;
+    margin: 5px;
+    margin-top: 50px;
     grid-row: span 5 / span 5;
     grid-column-start: 5;
 }
@@ -192,7 +190,8 @@ header h2 {
   max-width: fit-content;
   padding: 10px;
   display: block;
-  background-color: #060f21c9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.484);
+  background-color: #011131c9;
   border-bottom:#ff2e2e 1px solid;
   border-right:#ff2e2e 1px solid;
   border-radius: 30px;
@@ -216,7 +215,8 @@ header h2 {
   max-width: fit-content;
   padding: 10px;
   display: block;
-  background-color: #060f21c9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.484);
+  background-color: #011131c9;
   border-bottom:#2e93ff 1px solid;
   border-right:#2e93ff 1px solid;
   border-radius: 30px;
