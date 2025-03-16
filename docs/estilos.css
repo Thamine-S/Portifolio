@@ -169,8 +169,6 @@ header h2 {
 .div2-sobre-mim {
     margin: 20px;
     background-color: #d8d6d62c;
-    border-bottom: solid 2px  #08feac;
-    border-right: solid 2px  #08feac;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.484);
     border-radius: 20px;
     grid-row: span 5 / span 5;
@@ -190,13 +188,62 @@ header h2 {
     margin-top: 10px;
 }
 
+.faculdade {
+  max-width: fit-content;
+  padding: 10px;
+  display: block;
+  background-color: #060f21c9;
+  border-bottom:#ff2e2e 1px solid;
+  border-right:#ff2e2e 1px solid;
+  border-radius: 30px;
+  margin: 20px;
+}
+
+.faculdade p {
+  text-align: center !important;
+  margin: 5px !important;
+  font-size: 15px !important;
+}
+
+.curso {
+  width: 170px;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #fb1e1ea4;
+}
+
+.emprego {
+  max-width: fit-content;
+  padding: 10px;
+  display: block;
+  background-color: #060f21c9;
+  border-bottom:#2e93ff 1px solid;
+  border-right:#2e93ff 1px solid;
+  border-radius: 30px;
+  margin: 20px;
+}
+
+.emprego p {
+  text-align: center !important;
+  margin: 5px !important;
+  font-size: 15px !important;
+}
+
+.cargo {
+  width: 170px;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #1ed2fba4;
+}
+
 #sobre-mim h1 {
   font-family: "Orbitron", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 25px;
-  padding: 20px;
+  padding: 15px;
+  padding-left: 40px;
 }
 
 /* Seção Projetos */
