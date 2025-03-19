@@ -48,6 +48,15 @@ header {
 }
 
 
+nav {
+  position: fixed; /* Fixa a barra na tela */
+  top: 0; /* Cola no topo */
+  left: 0;
+  width: 100%; /* Ocupa toda a largura */
+  z-index: 1000; /* Mantém a barra acima de outros elementos */
+}
+
+
 .parent-nav {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -108,7 +117,7 @@ input:checked + .slider:before {
 }
 
 nav {
-    background-color: #11002b;
+    background-color: #11002b93;
     overflow: hidden;
 }
 
@@ -122,8 +131,9 @@ nav a {
     display: block;
     color: white;
     text-align: center;
-    
-    padding: 10px 16px;
+    font-family: 'Saira', sans-serif;
+    text-align: justify;
+    padding: 12px 10px;
     text-decoration: none;
 }
 
@@ -145,6 +155,8 @@ header h2 {
 }
 
 /* Seção Sobre Mim */
+
+
 #sobre-mim {
     background-color: #0b0427;
     display: block; /* Alterado para block para ocupar a largura total */
@@ -920,6 +932,8 @@ footer h2 {
   }
   
 .parent {
+  padding-top: 100px;
+  padding-bottom: 200px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
