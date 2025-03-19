@@ -291,6 +291,7 @@ header h2 {
 
 .container
 {
+  margin-bottom: 100px !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -365,6 +366,12 @@ header h2 {
 .container .box-cardapio:after
 {
   background: linear-gradient(315deg, #bb8164, #c87bf1)
+}
+
+.container .box-data-analysis:before,
+.container .box-data-analysis:after
+{
+  background: linear-gradient(315deg, #0e04c6, #1347b7)
 }
 
 .container .box span
@@ -554,35 +561,46 @@ header h2 {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  text-align: center;
   }
 
 /* Seção Habilidades */
 #habilidades {
-    background-color: #04020c00;
-    text-align: center;
-    margin: 15px;
-    padding: 20px;
-    padding-bottom: 100px
+  padding-bottom: 200px !important;
+  padding-top: 100px !important;
+
+
+
 }
 
-#habilidades img {
-    max-width: 75px;
-    height: auto;
-    display: inline-block;
-    margin: 5px;
-   
+#habilidades div{
+
+  display: flex;
+  justify-content: center;
+flex-wrap: wrap;
 }
+
+.skills-text {
+  background-color: #ce88d138;
+  font-family: 'Saira', sans-serif;
+  text-align: justify;
+  font-size: 17px;
+  padding: 7px;
+  margin: 10px;
+  border-radius: 15px;
+  width: fit-content !important;
+}
+
+
 
 /* Rodapé */
 footer {
-    margin: 20px;
-    border-radius: 20px;
     background-image: url("assets\\fundo_bonito.png");
     background-size: cover;
     background-repeat: no-repeat;
     padding: 10px;
     text-align: center;
-    min-width: 1000px ;
+    min-width: 1200px;
 }
 
 footer h2 {
@@ -590,6 +608,7 @@ footer h2 {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  padding-bottom: 20px;
 }
   
   .contato {
@@ -709,12 +728,9 @@ footer h2 {
   }
   
   body {
-    min-height: 100vh;
     display: grid;
     place-items: center;
-    background-color: var(--bg);
     color: #ffffff;
-    font-family: "Inter", "DM Sans", Arial, sans-serif;
   }
   
   *,
