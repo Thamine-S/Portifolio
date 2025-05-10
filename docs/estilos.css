@@ -601,6 +601,8 @@ flex-wrap: wrap;
   margin: 10px;
   border-radius: 15px;
   width: fit-content !important;
+ border: 2px solid transparent;
+  transition: 1.5s;
 }
 
 
