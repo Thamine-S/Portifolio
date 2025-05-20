@@ -598,34 +598,8 @@ Gmail
                 navLinks[0].click();
             }
 
-            // --- Dark Mode Toggle Logic ---
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
+           
 
-            // Check local storage for saved theme preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                body.classList.add('dark');
-            } else if (savedTheme === 'light') {
-                 body.classList.remove('dark'); // Ensure light mode is active if saved
-            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                 // Check OS preference if no theme is saved
-                 body.classList.add('dark');
-            }
-
-
-            // Add event listener to the toggle button
-            darkModeToggle.addEventListener('click', () => {
-                body.classList.toggle('dark');
-
-                // Save preference to local storage
-                if (body.classList.contains('dark')) {
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    localStorage.setItem('theme', 'light'); // Save light mode preference too
-                }
-            });
-             // --- End Dark Mode Toggle Logic ---
 
         });
 
