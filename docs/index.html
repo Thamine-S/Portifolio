@@ -1,472 +1,637 @@
 <!DOCTYPE html>
-
-
-<html lang="en"><head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-     <link rel="stylesheet" href="modal_dash.css">
-     <link rel="stylesheet" href="modal_menu.css">
-     <link rel="stylesheet" href="modal_data.css">
-    <link rel="stylesheet" href="modal_jornal_Extenssion.css">
-       <script src="script.js"></script>
+    <title> Thamine's Portifolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom font - Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+
+             width: 100%;
+  height: 300px; /* ajuste conforme necessário */
+  background: linear-gradient(270deg, #14003c, #2affbc66, #002937, #14003b, #4e46e55d, #2c0042);
+  background-size: 800% 800%;
+  animation: gradientMove 60s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 
-    <title>Thamine's Portifolio</title>
-    <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-<!-- Place in your HTML file between the <head> tags -->
 
-  <link rel='preconnect' href='https://fonts.googleapis.com'>
-  <link href='https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap' rel='stylesheet' type='text/css'>
 
+        /* REMOVIDO OU AJUSTADO: background-color: rgb(43, 43, 43) !important; - Gerenciado pelo Tailwind agora */
+
+        /* Active tab style */
+        /* Este estilo customizado não muda automaticamente no dark mode.
+           Se precisar que ele mude, adicione regras body.dark .nav-link.active { ... }
+           OU reescreva com classes Tailwind aplicadas diretamente no botão via JS.
+        */
+        .nav-link.active {
+            background-color: #4F46E5; /* indigo-600 */
+            color: white;
+        }
+
+        /* Smooth transition for content visibility */
+        .content-section {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .content-section.active {
+            display: block; /* Shown when active */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Ensure full height for sidebar and content */
+        .main-container {
+             /* Removido min-height: calc(100vh - 4rem); para melhor adaptação ao conteúdo/dark mode,
+                mas você pode adicionar de volta se necessário.
+                min-h-screen no body já ajuda a garantir altura mínima. */
+        }
+
+        /* Mobile responsiveness for navigation */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                flex-direction: row; /* Tabs side-by-side on mobile */
+                justify-content: space-around;
+                padding-bottom: 1rem;
+                 /* border-bottom gerenciado pelo Tailwind no HTML agora */
+                 /* margin-bottom gerenciado pelo Tailwind no HTML agora */
+            }
+            .main-content-area {
+                width: 100%;
+                /* padding-left gerenciado pelo Tailwind no HTML agora */
+            }
+            .nav-link {
+                padding: 0.5rem 0.75rem; /* Smaller padding on mobile */
+                font-size: 0.875rem; /* Smaller font on mobile */
+            }
+            .main-container {
+                flex-direction: column;
+            }
+        }
+
+        .tech-cobbot {
+border-radius: 0.7rem;  
+padding: 5px;
+background-color: rgba(4, 255, 171, 0.204);
+font-size: 0.875rem;
+transition: 1s;
+}
+
+.tech-cobbot:hover {
+    background-color: rgba(4, 255, 171, 0.629);
+
+}
+
+        .tech-menu {
+border-radius: 0.7rem;  
+padding: 5px;
+background-color: rgba(255, 150, 37, 0.204);
+font-size: 0.875rem;
+transition: 1s;
+}
+
+.tech-menu:hover {
+    background-color: rgba(255, 192, 44, 0.629);
+
+}
+
+
+       .tech-sustentar {
+border-radius: 0.7rem;  
+padding: 5px;
+background-color: rgba(16, 193, 134, 0.677);
+font-size: 0.875rem;
+transition: 1s;
+}
+
+.tech-sustentar:hover {
+    background-color: rgb(2, 196, 118);
+
+}
+
+
+       .tech-talia {
+border-radius: 0.7rem;  
+padding: 5px;
+background-color: rgba(146, 37, 255, 0.204);
+font-size: 0.875rem;
+transition: 1s;
+}
+
+.tech-talia:hover {
+    background-color: rgba(146, 44, 255, 0.629);
+
+}
+
+       .tech-data {
+border-radius: 0.7rem;  
+padding: 5px;
+background-color: rgba(37, 135, 255, 0.204);
+font-size: 0.875rem;
+transition: 1s;
+}
+
+.tech-data:hover {
+    background-color: rgba(44, 206, 255, 0.629);
+
+}
+
+        ion-icon {
+  font-size: 1rem;
+}
+    </style>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
 
-<section>
+<body class="bg-gray-100 text-gray-800 min-h-screen p-4 dark:bg-gray-900 dark:text-gray-200">
 
-    <nav>
-      <div class="parent-nav">
-      <div class="switch-container">
-        <label for="language-switch"></label>
-        <label class="switch">
-            <input type="checkbox" id="language-switch">
-            <span class="slider"></span>
-        </label>
-        <p data-translate="lenguage">EN</p>
-    </div>
-    <script>
-      const translations = {
-          "pt": {
-              "lenguage": "PT-BR",
-              "title": "Olá, eu sou",
-              "subtitle": "E esse é o meu portifólio.",
-              "about-me": "Sobre mim",
-              "projects": "Projetos",
-              "skills": "Habilidades",
-              "contact-me": "Contato",
-              "about-me-text": "Sou uma estudante de Tecnologia da Informação com grande curiosidade em resolver problemas e explorar novas tecnologias. Minha jornada na tecnologia foi impulsionada pelo amor pela codificação, pelo desenvolvimento de sistemas e pelo aprendizado contínuo. Gosto de trabalhar em projetos que me desafiem a pensar criticamente e aplicar soluções inovadoras. Seja desenvolvimento de software, segurança cibernética ou análise de dados, estou sempre ansiosa para expandir meus conhecimentos e aprimorar minhas habilidades. Atualmente, estou focada em adquirir experiência prática por meio de projetos e aprender com aplicações do mundo real. Meu objetivo é contribuir com soluções tecnológicas significativas e, ao mesmo tempo, crescer como profissional no setor.",
-              "project-dashboard-title": "Dashboard Finanças",
-              "project-essay-corrector-title": "Corretor de Redação",
-              "project-menu-title": "Cardápio Madalena's Kitchen",
-              "project-menu-objective-title": "Objetivo do Projeto",
-              "project-menu-objective-text": " Este projeto foi desenvolvido para criar um menu online interativo para uma loja especializada em geleias, compotas e geladinhos artesanais. O objetivo principal foi proporcionar aos clientes uma experiência digital intuitiva, permitindo que explorem os produtos de forma prática e visualmente agradável.",
-              "project-menu-funcionalities-title": "Funcionalidades Principais",
-              "project-menu-funcionalities-text1": "Catálogo Digital: Exibição organizada dos produtos com imagens, descrições e preços.",
-              "project-menu-funcionalities-text2": "Categorias: Opções para navegar entre os produtos, por meio da barra de navegação.",
-              "project-menu-funcionalities-text3": "Detalhes dos Produtos: Informações sobre ingredientes, sabores disponíveis e sugestões de consumo.",
-              "project-menu-funcionalities-text4": "Design Responsivo: Compatibilidade com dispositivos móveis e desktops para uma navegação fluida.",
-              "project-menu-benefits-title": "Benefícios do Projeto",
-              "project-menu-benefits-text1":"Maior Alcance e Visibilidade: Clientes podem acessar o menu de qualquer lugar e conhecer os produtos sem precisar ir até a loja física.",
-              "project-menu-benefits-text2":"Melhor Experiência do Usuário: Interface intuitiva que valoriza os produtos e facilita a navegação.",
-               "project-menu-benefits-text3":"Destaque para o Negócio: Um menu online profissional transmite credibilidade e moderniza a presença digital da loja." ,
-              "project-menu-final-title": "Considerações Finais",
-              "project-menu-final-text": "O desenvolvimento deste menu online demonstra minha capacidade de criar soluções digitais personalizadas para pequenos negócios. O projeto combina um design atraente com funcionalidades que otimizam a experiência do cliente e impulsionam as vendas. ",
-              "project-dashboard-aviso": "Projeto ainda em desenvolvimento, para visualizar o processo de organização do projeto, clique no botão abaixo.",
-              "curso":"Tecnologia da Informação",
-              "periodo-curso":" 2° Período",
-               "cargo":"Estagiária de desenvolvimento",
-               "data":"03/2025 - atualmente",
+    <div class="main-container container mx-auto p-4 md:p-8 flex flex-col md:flex-row gap-8">
 
-
-          },
-          "en": {
-              "lenguage": "EN",
-              "title": "Hi, I am",
-              "subtitle": "And this is my portifolio.",
-              "about-me": "About me",
-              "projects": "Projects",
-              "skills": "Skills",
-              "contact-me": "Contact me",
-              "about-me-text": "I'm a passionate Information Technology student with a strong curiosity for solving problems and exploring new technologies. My journey in tech has been driven by a love for coding, system development, and continuous learning. I enjoy working on projects that challenge me to think critically and apply innovative solutions. Whether it's software development, cybersecurity, or data analysis, I’m always eager to expand my knowledge and improve my skills. Currently, I'm focused on gaining hands-on experience through projects and learning from real-world applications. My goal is to contribute to meaningful tech solutions while growing as a professional in the industry.",
-              "project-dashboard-title": "Finance Dashboard",
-              "project-essay-corrector-title": "Essay proofreader",
-              "project-menu-title": "Madalena's Kitchen Menu",
-              "project-menu-objective-title": "Project Objective",
-              "project-menu-objective-text": " This project was developed to create an interactive online menu for a store specializing in handmade products. The main objective was to provide customers with an intuitive digital experience, allowing them to explore the products in a practical and visually pleasing way.",
-              "project-menu-funcionalities-title": "Main Features",
-              "project-menu-funcionalities-text1": "Digital Catalog: Organized display of products with images, descriptions and prices.",
-              "project-menu-funcionalities-text2": "Categories: Options for browsing products.",
-              "project-menu-funcionalities-text3": "Product Details: Information on ingredients, available flavors and consumption suggestions.",
-              "project-menu-funcionalities-text4": "Responsive Design: Compatibility with mobile devices and desktops for fluid navigation.",
-              "project-menu-benefits-title": "Project Benefits",
-              "project-menu-benefits-text1":"Greater Reach and Visibility: Customers can access the menu from anywhere and learn about the products without having to go to the physical store.",
-             "project-menu-benefits-text2":"Best User Experience: Intuitive interface that enhances products and facilitates navigation.",
-              "project-menu-benefits-text3":"Business Highlight: A professional online menu conveys credibility and modernizes the store's digital presence.",
-              "project-menu-final-title": "Final Considerations",
-              "project-menu-final-text": "The development of this online menu demonstrates my ability to create customized digital solutions for small businesses. The project combines an attractive design with features that optimize the customer experience and drive sales.",
-              "project-dashboard-aviso": "Project still under development, to view the development organization process, press the button below.",
-             "curso":"Information Tecnology",
-             "periodo-curso":" 2° Term",
-              "cargo":"development intern",
-              "data":"03/2025 - currently",
-
-
-          }
-      };
-
-      const switcher = document.getElementById("language-switch");
-      let currentLanguage = "pt";
-
-      switcher.addEventListener("change", () => {
-          currentLanguage = switcher.checked ? "pt" : "en";
-          document.querySelectorAll("[data-translate]").forEach(el => {
-              const key = el.getAttribute("data-translate");
-              el.textContent = translations[currentLanguage][key];
-          });
-      });
-  </script>
-  <div class="div2-nav">
-        <a href="#sobre-mim" data-translate="about-me">About me</a>
-        <a href="#projetos" data-translate="projects">Projects</a>
-        <a href="#habilidades" data-translate="skills">Skills</a>
-        <a href="#contato" data-translate="contact-me">Contact me</a>
-      </div>
-    </div>
-    </nav>
-
-
-
-    <header>
-        <section id="header-content">
-
+        <aside style="box-shadow: 16px 15px 38px -8px rgba(0,0,0,0.75); -webkit-box-shadow: 16px 15px 38px -8px rgba(0,0,0,0.75); -moz-box-shadow: 16px 15px 38px -8px rgba(0,0,0,0.75);" class="sidebar md:w-1/4 bg-white p-6 rounded-lg shadow-lg flex flex-col gap-3 md:h-fit dark:bg-gray-800 dark:shadow-xl">
+            <button data-target="sobre-mim" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500 active">
+                <i class="fas fa-user mr-2"></i>About me
+            </button>
+            <button data-target="projeto-1" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+               CobBot
+            </button>
             
-<div class="parent">
-    <div class="div1"  id="header-text">         
-        <div class="wrapper">
-            <svg>
-                <text x="50%" y="50%" dy=".35em" text-anchor="middle" data-translate="title">
-                    Hi, I am 
-                </text>
-            </svg>
-        </div>
-        <div class="content">
-            <h1 class="title">Thamine Sumaya
-              <div class="aurora">
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-                <div class="aurora__item"></div>
-              </div>
-            </h1>
-            <p class="subtitle" data-translate="subtitle">And this is my portifolio.</p>
-          </div>
-    </div>
-    <div class="div2">
-        <img src="assets\img_perfil.png" alt="Foto de perfil"  id="header-image">
-    </div>
-</div>
-    
+            <!-- <button data-target="projeto-2" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+           Environment.IA
+            </button>
+            <button data-target="projeto-3" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            Madalena's Kitchen Menu
+            </button>
+
+         <button data-target="projeto-4" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                 Tal.IA
+            </button> 
 
 
-        </section>
-    </header>
-        
-    
-    <section id="sobre-mim">
-        
-<div class="parent-sobre-mim">
- 
-    <div class="div1-sobre-mim">
-       <h1 data-translate="about-me">About me</h1> <br>
-        <p data-translate="about-me-text">I'm a passionate Information Technology student with a strong curiosity for solving problems and exploring new technologies. My journey in tech has been driven by a love for coding, system development, and continuous learning. I enjoy working on projects that challenge me to think critically and apply innovative solutions. Whether it's software development, cybersecurity, or data analysis, I’m always eager to expand my knowledge and improve my skills. Currently, I'm focused on gaining hands-on experience through projects and learning from real-world applications. My goal is to contribute to meaningful tech solutions while growing as a professional in the industry.</p>
-    </div>
-    <div class="div2-sobre-mim">
-<div class="faculdade">
-<p >Univesp</p> 
-<p data-translate="curso" class="curso">Information Tecnology</p>
-<p data-translate="periodo-curso"> 2° Term</p>
-</div>
-<div class="emprego">
-  <p>TCS</p>
-  <p class="cargo" data-translate="cargo">development intern</p> 
-  <p style="font-size: 13px !important;" data-translate="data">03/2025 - currently</p>
-  </div>
-    </div>
-</div>
+             <button data-target="projeto-5" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+           Case Data Analises
+            </button>  -->
+           
+             <!-- <button data-target="projeto-6" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <i class="fas fa-rocket mr-2"></i> Futuro Projeto
+            </button> -->
 
-    </section>
+            <button data-target="contato" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            Contact
+            </button>
 
-    <section id="habilidades">
-          <h2 data-translate="skills">Skills</h2>
-          <div>
-      <p  class="skills-text"   onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Python</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#ffa856'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">HTML</p>
-      <p  class="skills-text"  onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">CSS</p>
-      <p  class="skills-text"  onmouseover="this.style.borderColor='#537398'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">PHP</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#fefe43'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">SQL</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#ffa856'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Jupyter Notebook</p>
-      <p  class="skills-text"  onmouseover="this.style.borderColor='#031a64'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Figma</p>
-      <p  class="skills-text"  onmouseover="this.style.borderColor='#193cae'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Numpy</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Pandas</p>
-      <p  class="skills-text"  onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Plotly.js</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Matplotlib</p>
-      <p  class="skills-text"  onmouseover="this.style.borderColor='#fefe43'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">JavaScript</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Photoshop</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Visual Studio Code</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#7917e1'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Visual Estudio</p> 
-      <p  class="skills-text" onmouseover="this.style.borderColor='#fefe43'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Power BI</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#12ea81'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Vue</p> 
-      <p  class="skills-text"  onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Flask</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#a528ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">C#</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">ASPNET Core</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#56b0ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">SQL Server</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#537398'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">PostgreSQL</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#a528ff'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Bootstrap</p> 
-      <p  class="skills-text" onmouseover="this.style.borderColor='#ffa856'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">JSON</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#8efe43'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Swagger</p>
-      <p  class="skills-text" onmouseover="this.style.borderColor='#ffa856'; this.style.transform='scale(1.2)'" onmouseout="this.style.borderColor='transparent'; this.style.transform='scale(1)'">Fetch</p>
-      
-  
-      </div>
-  
-  </section>
+        </aside>
 
-    <section id="projetos">
+        <main style="box-shadow: 16px 15px 38px -8px rgba(0,0,0,0.75); -webkit-box-shadow: 16px 15px 38px -8px rgba(0,0,0,0.75); -moz-box-shadow: 16px 15px 38px -8px rgba(0,0,0,0.75);" class="main-content-area md:w-3/4 bg-white p-6 md:p-10 rounded-lg shadow-lg dark:bg-gray-800 dark:shadow-xl">
+            <section id="sobre-mim" class="content-section active">
 
-        <h2 data-translate="projects">Projects</h2>
-        <div class="parent-projetos">
-          <!-- Card 1 -->
-          <div class="div1-projetos">
-            <div class="container">
-              <div class="box box-finance">
-                <span></span>
-                <div class="content">
-                  <h2 class="dash-text">Bright Balance</h2>
-                  <img class="img-dash-card" src="assets\dash-card.png" alt="imagem">
-                  <p class="dash-text">Financial Dashboard</p>
-                  <a href="#" class="read-more" data-modal="modal1">Read More</a>
-                </div>
-              </div>
-            </div>   
+                <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6 dark:text-indigo-400">Thamine Sumaya</h1>
 
-            <div class="container">
-              <div class="box box-data-analysis">
-                <span></span>
-                <div class="content">
-                  <h2 class="">Data Analysis Case</h2>
-                  <img class="" src="" alt="imagem">
-                  <p class=""></p>
-                  <a href="#" class="read-more" data-modal="modal4">Read More</a>
-                </div>
-              </div>
-            </div>   
-
-          </div>
-
-          <!-- Card 2 -->
-          <div class="div2-projetos">
-            <div class="container">
-              <div class="box box-corretor">
-                <span></span>
-                <div class="content">
-                  <h2>Newsly</h2>
-                  <img src="assets\img-card-jornal1.png" class="img-card-jornal" alt="imagem">
-                  <p></p>
-                  <a href="#" class="read-more" data-modal="modal2">Read More</a>
-                </div>
-              </div>
+            <div  class="flex flex-column gap-4">
+ <div >
+                <img src="/src/foto-portifolio.png" alt="" style="width: 30rem; height: auto">
+            
             </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="div3-projetos">
-            <div class="container">
-              <div class="box box-cardapio">
-                <span></span>
-                <div class="content">
-                  <h2 data-translate="project-menu-title">Madalena's Kitchen Menu</h2>
-                  <img class="img-card" src="assets\icon-card-menu.png" alt="imagem">
-                  <p data-translate= "project-menu-subtitle"></p>
-                  <a href="#" class="read-more" data-modal="modal3">Read More</a>
+                <div class="flex flex-wrap gap-4">                        
+
+                    <div style="width: fit-content; height: fit-content" class=" sm:w-1/2 md:w-1/3 px-2 mb-4 bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700 dark:shadow-none"> <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-600">
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Talent Cloud Services</h3>
+                        </div>
+                        <div class="px-6 py-4">
+                            <p class="text-gray-700 text-base dark:text-gray-300">Development Intern</p>
+                            <p class="text-gray-700 text-base dark:text-gray-300">03/2025 - atualmente</p>
+                        </div>
+                    </div>
+
+                    <div style="width: fit-content; height: fit-content" class=" sm:w-1/2 md:w-1/3 px-2 mb-4 bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700 dark:shadow-none"> <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-600">
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Univesp</h3>
+                        </div>
+                        <div class="px-6 py-4">
+                            <p class="text-gray-700 text-base dark:text-gray-300">Information Technology</p>
+                            <p class="text-gray-700 text-base dark:text-gray-300">06/2024 - 06/2027</p>
+                        </div>
+                    </div>
+                
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <!-- Modal do Card 1 -->
-      <div id="modal1" class="modal">
-        <div class="myGrad">
-          <span class="close" data-modal="modal1">&times;</span>
-          <h2 class="content-dash">Bright Balance</h2>
-          <div class="tecnologias-dash">
-            <p class="tech-modal-dash"  >HTML | CSS | JS | Vue | Chart.js | Plotly.js | Python | Flask | API Rest</p>
-          </div>
-          <h3 data-translate="project-dashboard-title">Finance Dashboard</h3>
-          <p data-translate="project-dashboard-aviso">Project still under development, to view the development organization process, press the button below.</p>
-          <ul class="contato">
-            <!--<li style="--i:#765e4d;--j:#442c1b" onclick="window.open('https://github.com/Thamine-S/Menu-Madalena-s-Kitchen', '_blank')">
-              <span class="icon"><ion-icon name="logo-github" ></ion-icon></span>
-              <span class="title">Github Repo</span>--->
-              <li style="--i:#fdf4da70;--j:#ecd614" onclick="window.open('https://miro.com/app/board/uXjVKMtzlK8=/?share_link_id=920601873404', '_blank')">
-                <span class="icon"><ion-icon name="sparkles-outline"></ion-icon></span>
-                <span class="title">Miro</span>
-            </ul>
-        </div>
-      </div>
-    
-      <!-- Modal do Card 2 -->
-      <div id="modal2" class="modal">
-        <div class="modal-content-jornal">
-          <span class="close" data-modal="modal2">&times;</span>
-          <h2>Newsly</h2>
-          <p class="modal-jornal-text" data-translate="project-dashboard-aviso">Project still under development, to view the development organization process, press the button below.</p>
-          <ul class="contato">
-            <!--<li style="--i:#765e4d;--j:#442c1b" onclick="window.open('https://github.com/Thamine-S/Menu-Madalena-s-Kitchen', '_blank')">
-              <span class="icon"><ion-icon name="logo-github" ></ion-icon></span>
-              <span class="title">Github Repo</span>--->
-              <li style="--i:#f2d57f;--j:#fee59a" onclick="window.open('https://miro.com/app/board/uXjVIQ2T6-Y=/?share_link_id=343517109513', '_blank')">
-                <span class="icon"><ion-icon name="sparkles-outline"></ion-icon></span>
-                <span class="title">Miro</span>
-            </ul>
-        </div>
-      </div>
-    
-      <!-- Modal do Card 3 -->
-      <div id="modal3" class="modal">
-        <div class="modal-content-menu">
-          <span class="close" data-modal="modal3">&times;</span>
-          <h2 class="title-modal-menu" data-translate="project-menu-title">Madalena's Kitchen Menu</h2>
-          <div class="tecnologias">
-          <p class="tech-modal-menu" style="  background-color: #f6d3d3;   color: #df5656;   box-shadow: 5px 4px 0px 0px rgb(210, 130, 130);">HTML</p>
-          <p class="tech-modal-menu" style="  background-color: #d3d9f6;   color: #5668df;   box-shadow: 5px 4px 0px 0px rgb(135, 130, 210);">CSS</p>
-          <p class="tech-modal-menu" style="  background-color: #f6edd3;   color: #ddb335;   box-shadow: 5px 4px 0px 0px rgb(210, 190, 130);">Java Script</p>
-          <p class="tech-modal-menu" style="  background-color: #e9e9e9;   color: #4c4c4c;   box-shadow: 5px 4px 0px 0px rgb(177, 177, 177);">Figma</p>
-          <p class="tech-modal-menu" style="  background-color: #e9edff;   color: #6c77c1;   box-shadow: 5px 4px 0px 0px rgb(135, 130, 210);">Swiper</p>
-          <p class="tech-modal-menu" style="  background-color: #cdcdcd;   color: #4c4c4c;   box-shadow: 5px 4px 0px 0px rgb(177, 177, 177);">GitHub</p>
+                </div>
+<div class="w-full space-y-4 px-2">
+                    <h2 class="text-2xl font-semibold text-indigo-600 mb-3 dark:text-indigo-400"> About Me </h2>
+
+                     <p>I'm an Information Technology student at UNIVESP (2024–2027) and a Development Intern at <a class="text-blue-600 hover:underline dark:text-purple-400" href="https://www.talentcs.com.br/institucional/">Talent Cloud Services</a>. I’m passionate about creating efficient and scalable systems, with a strong interest in automation, AI, and data-driven solutions.</p>
+                        <p>Currently, I work on the development and maintenance of a Warehouse Management System (WMS), using technologies like Vue.js, ASP.NET Core, Bootstrap, and SQL. I’ve led initiatives involving AI-powered automation with the Gemini API, helping reduce manual work and optimize logistics processes.</p>
+                        <p>I have hands-on experience in Python, JavaScript, C#, and tools like Power BI, Excel, PostgreSQL, and MongoDB. I'm always exploring new technologies and improving my skills through real-world projects.</p>
+                        <p>Adaptable, proactive, and detail-oriented, I'm looking to grow as a developer while contributing to impactful tech solutions.</p>
+                    </div>
+
+                    <div class="w-full mt-6 px-2"> <h2 class="text-2xl font-semibold text-indigo-600 mb-3 dark:text-indigo-400">Stack:</h2>
+                        <ul class="list-disc list-inside pl-4 grid grid-cols-2 md:grid-cols-3 gap-2">
+                          
+
+<p>Python</p>
+<p>HTML</p>
+<p>CSS</p>
+<p>SQL</p>
+<p>Jupyter Notebook</p>
+<p>Figma</p>
+<p>Numpy</p>
+<p>Pandas</p>
+<p>Plotly.js</p>
+<p>Matplotlib</p>
+<p>JavaScript</p>
+<p>Photoshop</p>
+<p>Visual Estudio</p>
+<p>Power BI</p>
+<p>Vue</p>
+<p>Flask</p>
+<p>C#</p>
+<p>ASPNET Core</p>
+<p>SQL Server</p>
+<p>PostgreSQL</p>
+<p>Bootstrap</p>
+<p>JSON</p>
+<p>Swagger</p>
+<p>Fetch</p>
+
+                        </ul>
+                    </div>
+
+                </>
+            </section>
+
+            <section id="projeto-1" class="content-section">
+                 <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6 dark:text-green-400">CobBot</h1>
+                <div class="space-y-4">
 
 
-
-        </div>
-        <div class="text-modal-menu">
-        <h2 data-translate="project-menu-objective-title">Project Objective</h2>         
-          <p class="text-modal-menu-real" data-translate="project-menu-objective-text">This project was developed to create an interactive online menu for a store specializing in handmade products. The main objective was to provide customers with an intuitive digital experience, allowing them to explore the products in a practical and visually pleasing way.</p>
-      </div>
-       <div>   
-<div class="parent-modal-menu">
-  <div class="div1-modal-menu"> 
-
-    <h2 data-translate="project-menu-funcionalities-title">Main Features</h2>      
-      <p class="text-modal-menu-real" data-translate=" project-menu-funcionalities-text1">&#10230;<b> Digital Catalog:</b> Organized display of products with images, descriptions and prices.</p>
-      <p class="text-modal-menu-real"data-translate="project-menu-funcionalities-text2">&#10230; <b>Categories:</b> Options for browsing products.</p>
-      <p class="text-modal-menu-real" data-translate="project-menu-funcionalities-text3">&#10230; <b>Product Details:</b> Information on ingredients, available flavors and consumption suggestions.</p>
-      <p class="text-modal-menu-real" data-translate="project-menu-funcionalities-text4">&#10230; <b>Responsive Design:</b> Compatibility with mobile devices and desktops for fluid navigation.</p>
-
-    <h2 data-translate="project-menu-benefits-title">Project Benefits</h2>   
-      <p class="text-modal-menu-real" data-translate="project-menu-benefits-text1">&#10230; <b>Greater Reach and Visibility:</b> Customers can access the menu from anywhere and learn about the products without having to go to the physical store.</p>
-      <p class="text-modal-menu-real" data-translate="project-menu-benefits-text2">&#10230; <b>Best User Experience:</b> Intuitive interface that enhances products and facilitates navigation.</p>
-      <p class="text-modal-menu-real" data-translate="project-menu-benefits-text3">&#10230; <b>Business Highlight:</b> A professional online menu conveys credibility and modernizes the store's digital presence.</p>
-  
-    <h2 data-translate="project-menu-final-title" >Final Considerations</h2>         
-    <p class="text-modal-menu-real" data-translate="project-menu-final-text">The development of this online menu demonstrates my ability to create customized digital solutions for small businesses. The project combines an attractive design with features that optimize the customer experience and drive sales.</p>
-
-  </div>
-  <div class="div2-modal-menu">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <swiper-container>
-  <swiper-slide><img class="foto-modal-menu" src="assets\print-projetos\menu-mada4.jpg" alt=""></swiper-slide>
-  <swiper-slide><img class="foto-modal-menu" src="assets\print-projetos\menu-mada3.jpg" alt=""></swiper-slide>
-  <swiper-slide><img class="foto-modal-menu" src="assets\print-projetos\menu-mada2.jpg" alt=""></swiper-slide>
-  <swiper-slide><img class="foto-modal-menu" src="assets\print-projetos\menu-mada1.jpg" alt=""></swiper-slide>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>Slide ...</swiper-slide>
 </swiper-container>
+
+
+
+
+                    <div class="flex flex-wrap gap-4">
+                    <p><strong>Stack:</strong></p>
+                    <p class="tech-cobbot " >Python</p>
+                     <p class="tech-cobbot" >Fast API</p>
+                      <p class="tech-cobbot" >Fetch API</p>
+                       <p class="tech-cobbot" >Gemini API</p>
+                        <p class="tech-cobbot" >JSON</p>
+                         <p class="tech-cobbot" >Java Script</p>
+                          <p class="tech-cobbot" >HTML</p>
+                           <p class="tech-cobbot" >CSS</p>
+                           <p class="tech-cobbot">PyWhatKit</p>
+                </div>
+                <p>
+                    The CobBot project aims to revolutionize debt collection by providing an intelligent and automated solution for sending personalized messages to debtors. Its core purpose is to streamline the recovery process, making it more efficient and user-friendly. The system empowers users to create highly customized messages and schedule their automated delivery via WhatsApp, ultimately simplifying debt management and improving recovery rates.
+                </p>
+                <p>
+                    The CobBot's robust backend is built with Python, leveraging the FastAPI API for high performance and scalability. This setup ensures efficient handling of requests and seamless integration of new features. A key aspect of the backend is its intelligent automation: it uses Gemini AI to generate personalized and humanized collection messages, dynamically adapting to each debtor's profile for maximum effectiveness. For persistent data storage, the system utilizes JSON files as its database, offering a lightweight and flexible solution. The backend also handles the automated and scheduled delivery of messages via WhatsApp, employing Python libraries like PyWhatKit to ensure timely dispatch without incurring additional SMS costs. This project was developed as the final assignment for the 2nd edition of the Alura IA Immersion.
+                </p>
+                <p>
+                    The user-friendly interface of the CobBot is crafted with modern web technologies: HTML for structuring the content, CSS for styling, and JavaScript for dynamic interactions. This combination delivers an intuitive and responsive web application. The frontend communicates with the backend via Fetch requests, ensuring a smooth and modern user experience. This design allows users to easily customize messages, schedule deliveries, and efficiently monitor the collection process, all through a clean and accessible interface.
+                </p>
+
+                   
+                    <div class="mt-4">
+                        <!-- <a href="#" target="_blank" style="background-color: #1ac874;" class="inline-block bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition-colors duration-150 mr-2 dark:bg-green-700 dark:hover:bg-green-600">
+                            <i class="fas fa-external-link-alt mr-2"></i>Ver Projeto Online
+                        </a> -->
+                        <a href="https://github.com/Thamine-S/CobBot" target="_blank" style="margin: 2px;" class="inline-block bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-150 dark:bg-gray-600 dark:hover:bg-gray-500">
+                            <i class="fab fa-github mr-2"></i>Ver Código no GitHub
+                        </a>
+                         <a href="https://miro.com/app/board/uXjVI2N3P2Q=/?share_link_id=783189765958" style="margin: 2px;" target="_blank" class="inline-block  text-white px-6 py-3 rounded-md  transition-colors duration-150 mr-2 bg-yellow-600 hover:bg-yellow-500">
+                            <ion-icon name="navigate-outline"></ion-icon> Ver Planejamento
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projeto-2" class="content-section">
+                 <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6 dark:text-indigo-400" style="color: aquamarine;">Environment.IA</h1>
+                <div class="space-y-4">
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<swiper-container>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>Slide ...</swiper-slide>
+</swiper-container>
+
+
+                    <p>Descreva seu segundo projeto. Detalhe o problema que ele resolve, as ferramentas que você usou e o que você aprendeu durante o desenvolvimento.</p>
+                                         <div class="flex flex-wrap gap-4">
+
+                     <p><strong>Stack:</strong></p>
+                    <p class="tech-sustentar">Java Script</p>
+                    <p class="tech-sustentar">HTML</p>
+                    <p class="tech-sustentar">CSS</p>
+                    <p class="tech-sustentar">Gemini API</p>
+                    <p class="tech-sustentar">IBGE API</p>
+                    <!-- <p class="tech-sustentar"></p>
+                    <p class="tech-sustentar"></p> -->
+
+
+                </div>
+                    <div class="mt-4">
+                        <!-- <a href="#" target="_blank" style="background-color: rgb(48, 200, 149);" class="inline-block  bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition-colors duration-150 mr-2 dark:bg-green-700 dark:hover:bg-green-600">
+                            <i class="fas fa-external-link-alt mr-2"></i>Ver Projeto Online
+                        </a> -->
+                        <a href="#" target="_blank" class="inline-block bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-150 dark:bg-gray-600 dark:hover:bg-gray-500">
+                            <i class="fab fa-github mr-2"></i>Ver Código no GitHub
+                        </a>
+                         <a href="#" target="_blank" class="inline-block  text-white px-6 py-3 rounded-md  transition-colors duration-150 mr-2 bg-yellow-600 hover:bg-yellow-500">
+                            <ion-icon name="navigate-outline"></ion-icon>Ver Planejamento
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+ <section id="projeto-3" class="content-section">
+                 <h1 style="color: rgb(246, 198, 130);" class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6 dark:text-indigo-400">Madalena's Kitchen Menu</h1>
+                <div class="space-y-4">
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<swiper-container>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>Slide ...</swiper-slide>
+</swiper-container>
+
+
+
+                    <p>Descreva seu segundo projeto. Detalhe o problema que ele resolve, as ferramentas que você usou e o que você aprendeu durante o desenvolvimento.</p>
+                                        <div class="flex flex-wrap gap-4">
+
+                     <p><strong>Stack:</strong></p>
+                    <p class="tech-menu">Java Script</p>
+                    <p class="tech-menu">HTML</p>
+                    <p class="tech-menu">CSS</p>
+                                        </div>
+                     <div class="mt-4">
+                        <!-- <a href="#" target="_blank" style="background-color: burlywood;" class="inline-block bg-brown-600 text-white px-6 py-3 rounded-md hover:bg-brown-700 transition-colors duration-150 mr-2 dark:bg-brown-700 dark:hover:bg-brown-600">
+                            <i class="fas fa-external-link-alt mr-2"></i>Ver Projeto Online
+                        </a> -->
+                        <a href="#" target="_blank" class="inline-block bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-150 dark:bg-gray-600 dark:hover:bg-gray-500">
+                            <i class="fab fa-github mr-2"></i>Ver Código no GitHub
+                        </a>
+                         <a href="#" target="_blank" class="inline-block  text-white px-6 py-3 rounded-md  transition-colors duration-150 mr-2 bg-yellow-600 hover:bg-yellow-500">
+                            <ion-icon name="navigate-outline"></ion-icon>Ver Planejamento
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="projeto-4" class="content-section">
+                 <h1 class="text-3xl md:text-4xl font-bold text-purple-700 mb-6 dark:text-purple-400" >Tal.IA</h1>
+                <div class="space-y-4">
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<swiper-container>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>Slide ...</swiper-slide>
+</swiper-container>
+
+
+
+                    <p>Descreva seu segundo projeto. Detalhe o problema que ele resolve, as ferramentas que você usou e o que você aprendeu durante o desenvolvimento.</p>
+                    <div class="flex flex-wrap gap-4">
+
+                     <p><strong>Stack:</strong></p>
+                    <p class="tech-talia">CSS</p>
+                    <p class="tech-talia">Java Script</p>
+                    <p class="tech-talia">HTML</p>
+                    <p class="tech-talia">Gemini API</p>
+                    <p class="tech-talia">Fetch API</p>
+                                        </div>
+                     <div class="mt-4">                     <div class="mt-4">
+                        <!-- <a href="#" target="_blank" class="inline-block  bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors duration-150 mr-2 dark:bg-purple-700 dark:hover:bg-purple-600">
+                            <i class="fas fa-external-link-alt mr-2"></i>Ver Projeto Online
+                        </a> -->
+                        <a href="#" target="_blank" class="inline-block bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-150 dark:bg-gray-600 dark:hover:bg-gray-500">
+                            <i class="fab fa-github mr-2"></i>Ver Código no GitHub
+                        </a>
+                         <a href="#" target="_blank" class="inline-block  text-white px-6 py-3 rounded-md  transition-colors duration-150 mr-2 bg-yellow-600 hover:bg-yellow-500">
+                            <ion-icon name="navigate-outline"></ion-icon>Ver Planejamento
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+          <section id="projeto-5" class="content-section">
+                 <h1 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6 dark:text-blue-400" >Case de Analise de Dados</h1>
+                <div class="space-y-4">
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<swiper-container>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>Slide ...</swiper-slide>
+</swiper-container>
+
+
+
+                    <p>Descreva seu segundo projeto. Detalhe o problema que ele resolve, as ferramentas que você usou e o que você aprendeu durante o desenvolvimento.</p>
+                    <div class="flex flex-wrap gap-4">
+
+                     <p><strong>Stack:</strong></p>
+                    <p class="tech-data">Python</p>
+                    <p class="tech-data">Matplotlib</p>
+                    <p class="tech-data">Plotly</p>
+                    <p class="tech-data">Pandas</p>
+                    <p class="tech-data">Numpy</p>
+                    <p class="tech-data">Jupyter Notebook</p>
+                </div>
+                     <div class="mt-4">                     <div class="mt-4">
+                        <!-- <a href="#" target="_blank" class="inline-block  bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-150 mr-2 dark:bg-blue-700 dark:hover:bg-blue-600">
+                            <i class="fas fa-external-link-alt mr-2"></i>Ver Projeto Online
+                        </a> -->
+                        <a href="#" target="_blank" class="inline-block bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-150 dark:bg-gray-600 dark:hover:bg-gray-500">
+                            <i class="fab fa-github mr-2"></i>Ver Código no GitHub
+                        </a>
+                         <a href="#" target="_blank" class="inline-block  text-white px-6 py-3 rounded-md  transition-colors duration-150 mr-2 bg-yellow-600 hover:bg-yellow-500">
+                            <ion-icon name="navigate-outline"></ion-icon>Ver Planejamento
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+             <section id="contato" class="content-section" >
+                <h1  class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6 dark:text-indigo-400"> Contact me</h1>
+               <div style="margin: 10px;">
+                <h3 style="font-weight: 700; color:#d0d4ff">
+            Liked what you saw? Let’s connect! 
+                </h3>
+                <p>
+            I’m always open to new opportunities, collaborations, or just a good tech chat. Feel free to reach out or explore more on my social media!
+                </p>
+               </div>
+                    <div class="flex flex-wrap gap-4">
+<div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="thamine-sumaya-o-26036029b" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/thamine-sumaya-o-26036029b?trk=profile-badge"></a></div>
+        
+<div style="background-color: #0d1117; color: #c9d1d9; padding: 16px; width: 200px; height:fit-content; border-radius: 8px; font-family: Arial, sans-serif; text-align: left; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+  <div style="font-size: 18px; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid #30363d; padding-bottom: 4px;">
+    GitHub
   </div>
+    <img src="/src/icon-github.png" alt="GitHub Logo" style="width: 50px; border-radius: 50%; margin-bottom: 10px;">
+    <div style="font-size: 16px; font-weight: bold;">Thamine Sumaya</div>
+    <div style="font-size: 14px;">@Thamine-S</div>
+    <a href="https://github.com/Thamine-S" target="_blank" style="text-decoration: none; color: inherit;">
+  <button style=" border: 2px solid #c9d1d9; border-radius: 20px; padding: 2px 7px 2px 7px; margin: 10px; margin-left: 0px"> Ver Perfil</button>
+</a>
 </div>
- 
 
-          <ul class="botao-modal">
-          <li style="--i:#765e4d;--j:#442c1b" onclick="window.open('https://github.com/Thamine-S/Menu-Madalena-s-Kitchen', '_blank')">
-            <span class="icon"><ion-icon name="logo-github" ></ion-icon></span>
-            <span class="title">Github Repo</span>
-            <li style="--i:#e1cbaf;--j:#e5b87c" onclick="window.open('https://claricelis.github.io/Menu-Madalena-s-Kitchen/', '_blank')">
-              <span class="icon"><ion-icon name="browsers-outline"></ion-icon></span>
-              <span class="title">Page</span>
-          </ul></div>
-        </div>
-      </div>
+<div style="background-color: #0d1117; color: #c9d1d9; padding: 16px; width: fit-content; height:fit-content; border-radius: 8px; font-family: Arial, sans-serif; text-align: left; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+  <div style="font-size: 18px; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid #30363d; padding-bottom: 4px;">
+Gmail
+  </div>
+    <img src="/src/gmail-logo.png" alt="Gmail Logo" style="width: 50px; margin-bottom: 10px;">
+    <div style="font-size: 14px;">thaminesumaya@gmail.com</div>
+    <a href="mailto:thaminesumaya@gmail.com" target="_blank" style="text-decoration: none; color: inherit;">
+  <button style=" border: 2px solid #c9d1d9; border-radius: 20px; padding: 2px 7px 2px 7px; margin: 10px; margin-left: 0px; ">Email-me</button>
+</a>
+</div>
 
+</div>
+                </div></div>
+            </section>
 
-      <div id="modal4" class="modal">
-        <div class="modal-content">
-          <span class="close" data-modal="modal4">&times;</span>
-          <h2>Data Analysis</h2>
-          <p class="modal-text-data" data-translate="project-dashboard-aviso">Project still under development, to view the development organization process, press the button below.</p>
-          <ul class="contato">
-            <!--<li style="--i:#765e4d;--j:#442c1b" onclick="window.open('https://github.com/Thamine-S/Menu-Madalena-s-Kitchen', '_blank')">
-              <span class="icon"><ion-icon name="logo-github" ></ion-icon></span>
-              <span class="title">Github Repo</span>--->
-              <li style="--i:#f2d57f;--j:#fee59a" onclick="window.open('', '_blank')">
-                <span class="icon"><ion-icon name="sparkles-outline"></ion-icon></span>
-                <span class="title">Miro</span>
-            </ul>
-        </div>
-      </div>
-    
-      <script>
-        // Abrir modal ao clicar em "Read More"
-        document.querySelectorAll('.read-more').forEach(button => {
-          button.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevenir comportamento padrão do link
-            const modalId = this.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            if (modal) {
-              modal.style.display = 'block';
+        </main>
+    </div>
+
+    <script>
+        // Get all navigation links and content sections
+        const navLinks = document.querySelectorAll('.nav-link');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        // Function to switch tabs
+        function switchTab(targetId) {
+            // Remove 'active' class from all nav links and content sections
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // ARIA attribute for accessibility
+                link.setAttribute('aria-selected', 'false');
+            });
+            contentSections.forEach(section => {
+                section.classList.remove('active');
+                section.setAttribute('aria-hidden', 'true');
+            });
+
+            // Add 'active' class to the clicked link and corresponding content section
+            const clickedLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+            const targetSection = document.getElementById(targetId);
+
+            if (clickedLink) {
+                clickedLink.classList.add('active');
+                clickedLink.setAttribute('aria-selected', 'true');
             }
-          });
-        });
-    
-        // Fechar modal ao clicar no "x"
-        document.querySelectorAll('.close').forEach(span => {
-          span.addEventListener('click', function() {
-            const modalId = this.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            if (modal) {
-              modal.style.display = 'none';
+            if (targetSection) {
+                targetSection.classList.add('active');
+                targetSection.setAttribute('aria-hidden', 'false');
             }
-          });
+        }
+
+        // Add click event listener to each navigation link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const targetId = link.dataset.target; // Get the target section ID from data attribute
+                switchTab(targetId);
+            });
+
+            // Keyboard accessibility: allow Enter/Space to activate tabs
+            link.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault(); // Prevent default space scroll
+                    const targetId = link.dataset.target;
+                    switchTab(targetId);
+                }
+            });
         });
-    
-        // Fechar modal clicando fora do conteúdo
-        window.addEventListener('click', function(e) {
-          document.querySelectorAll('.modal').forEach(modal => {
-            if (e.target === modal) {
-              modal.style.display = 'none';
+
+        // Initialize the first tab as active on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialActiveLink = document.querySelector('.nav-link.active');
+            if (initialActiveLink) {
+                const targetId = initialActiveLink.dataset.target;
+                switchTab(targetId); // Ensure correct section is shown
+            } else if (navLinks.length > 0) {
+                // If no tab is marked active in HTML, activate the first one
+                navLinks[0].click();
             }
-          });
+
+            // --- Dark Mode Toggle Logic ---
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+
+            // Check local storage for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark');
+            } else if (savedTheme === 'light') {
+                 body.classList.remove('dark'); // Ensure light mode is active if saved
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                 // Check OS preference if no theme is saved
+                 body.classList.add('dark');
+            }
+
+
+            // Add event listener to the toggle button
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark');
+
+                // Save preference to local storage
+                if (body.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light'); // Save light mode preference too
+                }
+            });
+             // --- End Dark Mode Toggle Logic ---
+
         });
-      </script>
-    </section>
 
 
-        <section id="contato">
-        <footer>
-            <h2 data-translate="contact-me">Contact me</h2>
+        
+    </script>
 
-
-              <ul class="contato">
-              <li style="--i:#282768;--j:#01004d" onclick="window.open('mailto:thaminesumaya@gmail.com', '_blank')">
-                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                <span class="title">Email</span>
-              </li>
-              <li style="--i:#002762;--j:#233043" onclick="window.open('https://www.linkedin.com/in/thamine-sumaya-o-26036029b/', '_blank')">
-                <span class="icon"><ion-icon name="logo-linkedin"></ion-icon></span>
-                <span class="title">Linkedin</span>
-              </li>
-              <li style="--i:#233043;--j:#030303" onclick="window.open('https://github.com/Thamine-S', '_blank')">
-                <span class="icon"><ion-icon name="logo-github" ></ion-icon></span>
-                <span class="title">Github</span>
-              </li>
-              </ul>
-              <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-            
-
-            
-        </footer>
-    </section>
-    
 </body>
 </html>
