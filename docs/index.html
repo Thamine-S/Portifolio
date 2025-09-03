@@ -194,11 +194,11 @@ swiper-container:active {
              <button data-target="projeto-2" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
            Environment.IA
             </button>
-        <!--    
+            
             <button data-target="projeto-3" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            Madalena's Kitchen Menu
+            Perfilcorp
             </button>
---->
+
          <button data-target="projeto-4" class="nav-link w-full text-left px-4 py-3 rounded-md hover:bg-indigo-100 hover:text-indigo-700 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                  Tal.IA
             </button> 
@@ -233,10 +233,10 @@ swiper-container:active {
                     <div style="width: fit-content; height: fit-content" class=" sm:w-1/2 md:w-1/3 px-2 mb-4 bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700 dark:shadow-none"> <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-600">
                             <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Talent Cloud Services</h3>
                         </div>
-                        <div class="px-6 py-4">
-                            <p class="text-gray-700 text-base dark:text-gray-300">Junior Developer</p>
-                            <p class="text-gray-700 text-base dark:text-gray-300">07/2025 - atualmente</p>
-                        </div>
+                    <!--    <div class="px-6 py-4">
+                            <p class="text-gray-700 text-base dark:text-gray-300">Development Intern</p>
+                            <p class="text-gray-700 text-base dark:text-gray-300">03/2025 - atualmente</p>
+                        </div>--->
                     </div>
 
                     <div style="width: fit-content; height: fit-content" class=" sm:w-1/2 md:w-1/3 px-2 mb-4 bg-white rounded-lg shadow-md overflow-hidden dark:bg-gray-700 dark:shadow-none"> <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-600">
@@ -426,75 +426,136 @@ swiper-container:active {
             </section>
 
  <section id="projeto-3" class="content-section">
-                 <h1 style="color: rgb(246, 198, 130);" class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6 dark:text-indigo-400">Madalena's Kitchen Menu</h1>
+                 <h1 style="color: rgb(246, 198, 130);" class="text-3xl md:text-4xl font-bold text-indigo-700 mb-6 dark:text-indigo-400">Perfilcorp</h1>
                 <div class="space-y-4">
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <swiper-container>
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide ...</swiper-slide>
+  <swiper-slide><img src="./src/Perfilcorp/Captura de tela 2025-09-02 202954.png"></swiper-slide>
+  <swiper-slide><img src="./src/Perfilcorp/Captura de tela 2025-09-02 203508.png"></swiper-slide>
+  <swiper-slide><img src="./src/Perfilcorp/Captura de tela 2025-09-02 213640.png"></swiper-slide>
 </swiper-container>
 
-
-
-                    <p>Descreva seu segundo projeto. Detalhe o problema que ele resolve, as ferramentas que você usou e o que você aprendeu durante o desenvolvimento.</p>
                                         <div class="flex flex-wrap gap-4">
 
                      <p><strong>Stack:</strong></p>
-                    <p class="tech-menu">Java Script</p>
-                    <p class="tech-menu">HTML</p>
-                    <p class="tech-menu">CSS</p>
+                    <p class="tech-menu">Python</p>
+                    <p class="tech-menu">Googlesearch API</p>
+                    <p class="tech-menu">Gemini API</p>
+                    <p class="tech-menu">requests</p>
+                    <p class="tech-menu">urllib3</p>
+                    <p class="tech-menu">beautifulsoup4</p>
+                    <p class="tech-menu">RegEx</p>
+                    <p class="tech-menu">streamlit</p>
                                         </div>
+
+
+
+    <p class="text-white-600 mb-6">This project is a powerful web-based tool designed to generate comprehensive business reports. By leveraging a combination of web scraping and advanced AI, it can quickly gather and analyze information about any company, providing detailed insights into its logistics, supply chain, and competitive advantages. This tool is ideal for sales professionals, researchers, or anyone needing to prepare for a meeting or gain a deeper understanding of a business.</p>
+
+
+    <h2 class="text-2xl font-semibold text-white-800 mb-4">Core Features and Technologies</h2>
+
+    <p class="text-white-600 mb-4">The application is built on a robust technology stack, integrating several key Python libraries to handle data collection, processing, and analysis.</p>
+
+    <h3 class="text-xl font-medium text-white-700 mb-2">Data Collection and Search</h3>
+    <ul class="list-none pl-0 space-y-2 mb-4">
+        <li class="bg-white-50 p-4 rounded-lg">
+            <strong><code>google-api-python-client</code> & <code>googlesearch-python</code>:</strong> These libraries are the primary engines for web search. The <code>google-api-python-client</code> uses the Google Custom Search API for structured queries, while <code>googlesearch-python</code> serves as a reliable fallback, ensuring the tool can always find relevant web links and company CNPJs (Brazil's business registry number).
+        </li>
+        <li class="bg-white-50 p-4 rounded-lg">
+            <strong><code>requests</code>:</strong> This library handles all HTTP requests, fetching the HTML content from the websites found during the search phase.
+        </li>
+        <li class="bg-white-50 p-4 rounded-lg">
+            <strong><code>beautifulsoup4</code>:</strong> After <code>requests</code> downloads the HTML, <code>beautifulsoup4</code> parses the content. It's essential for navigating the page structure and extracting clean text, links, and other key information, while also removing unnecessary scripts and styles.
+        </li>
+    </ul>
+
+    <h3 class="text-xl font-medium text-white-700 mb-2">Processing and Analysis</h3>
+    <ul class="list-none pl-0 space-y-2 mb-4">
+        <li class="bg-white-50 p-4 rounded-lg">
+            <strong><code>google-genai</code>:</strong> This is the core of the analysis engine. The tool uses this library to communicate with Google's powerful Gemini AI models. It feeds all the collected text and CNPJ data to the AI, which then generates a detailed, customized report about the company.
+        </li>
+        <li class="bg-white-50 p-4 rounded-lg">
+            <strong><code>re (RegEx)</code>:</strong> A native Python library used for pattern matching. It's crucial for efficiently extracting CNPJ numbers, which follow a specific numerical or formatted pattern, from web content and links.
+        </li>
+    </ul>
+
+    <h3 class="text-xl font-medium text-white-700 mb-2">Application Interface</h3>
+    <ul class="list-none pl-0 space-y-2 mb-4">
+        <li class="bg-white-50 p-4 rounded-lg">
+            <strong><code>streamlit</code>:</strong> This library builds the entire web interface, transforming a simple Python script into an interactive web application. It creates all the front-end elements, including input forms, buttons, and the final report display, providing a seamless user experience.
+        </li>
+    </ul>
+
+
+    <div class="bg-black-50 p-4 rounded-lg border-l-4 border-blue-400 text-blue-400">
+        <h3 class="font-bold text-lg mb-1">Important Notes</h3>
+        <p>The tool's functionality is dependent on external APIs. It can be configured for use with either a <strong>free tier, which may have usage limitations</strong>, or a <strong>paid version that offers unlimited access and higher performance.</strong></p>
+    </div>
+
+</div>
+
+
                      <div class="mt-4">
                         <!-- <a href="#" target="_blank" rel="noopener noreferrer" style="background-color: burlywood;" class="inline-block bg-brown-600 text-white px-6 py-3 rounded-md hover:bg-brown-700 transition-colors duration-150 mr-2 dark:bg-brown-700 dark:hover:bg-brown-600">
                             <i class="fas fa-external-link-alt mr-2"></i>Ver Projeto Online
-                        </a> -->
+                        </a> 
                         <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors duration-150 dark:bg-gray-600 dark:hover:bg-gray-500">
-                            <i class="fab fa-github mr-2"></i>Ver Código no GitHub
-                        </a>
-                         <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block  text-white px-6 py-3 rounded-md  transition-colors duration-150 mr-2 bg-yellow-600 hover:bg-yellow-500">
-                            <ion-icon name="navigate-outline"></ion-icon>Ver Planejamento
-                        </a>
+                            <i class="fa fa-window-maximize" aria-hidden="true"></i> Ver Projeto
+                        </a>-->
+                       <!--  <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block  text-white px-6 py-3 rounded-md  transition-colors duration-150 mr-2 bg-yellow-600 hover:bg-yellow-500">
+                            <ion-icon name="navigate-outline"></ion-icon> Ver Planejamento
+                        </a>-->
                     </div>
-                </div>
+               
             </section>
 
 
-            <section id="projeto-4" class="content-section">
-                 <h1 class="text-3xl md:text-4xl font-bold text-purple-700 mb-6 dark:text-purple-400" >Tal.IA</h1>
-                <div class="space-y-4">
 
+    <section id="projeto-4" class="content-section p-6 md:p-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-purple-700 mb-6 dark:text-purple-400">Tal.IA</h1>
+        <div class="space-y-4">
+            
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+            <swiper-container>
+                <swiper-slide>
+                    <video controls width="auto" height="100px">
+                        <source src="./src/Talia/Gravação de Tela 2025-07-17 113653.mp4" type="video/mp4">
+                    </video>
+                </swiper-slide>
+                <swiper-slide>
+                    <video controls width="auto" height="100px">
+                        <source src="./src/Talia/Gravação de Tela 2025-07-17 114036.mp4" type="video/mp4">
+                    </video>
+                </swiper-slide>
+            </swiper-container>
+            
+            <div class="flex flex-wrap gap-4">
+                <p><strong>Stack:</strong></p>
+                <p class="tech-talia">CSS</p>
+                <p class="tech-talia">Java Script</p>
+                <p class="tech-talia">HTML</p>
+                <p class="tech-talia">Gemini API</p>
+                <p class="tech-talia">Fetch API</p>
+                <p class="tech-talia">ASP.NET Webforms</p>
+                <p class="tech-talia">Google Gemini MCP</p>
+            </div>
+            
+            <p>
+                As a development intern at Talent Cloud Service, I led the implementation of <strong>Tal.IA</strong>, an innovative artificial intelligence agent designed to optimize our customer support. This solution, which combines the power of <strong>Gemini AI</strong> and <strong>Google Gemini MCP</strong>, serves as a first-level support system, handling less complex calls.
+            </p>
+            
+            <p>
+                Tal.IA was developed to be simple and efficient, using pure JavaScript, CSS, and HTML, and was integrated into an ASP.NET Web Forms system. This experience provided me with practical deep dives into topics like <strong>Machine Learning</strong>, <strong>Prompt Engineering</strong>, and <strong>AI Agents</strong>, while also immensely enriching my professional journey. The opportunity to lead a project of this magnitude was unique and essential for developing my soft skills, and it was crucial for my full-time hiring as a Junior Developer focused on Innovation.
+            </p>
+            
+            <p>
+                The result has been a significant transformation: our human operations team, previously overwhelmed, can now focus on more complex issues, increasing team efficiency and introducing a strategic innovation into our system. Tal.IA not only eases the support burden but also empowers our users, guiding them through our WMS, which, despite its complexity, becomes more accessible to everyone. In the future, Tal.IA will be enabled to make requests to <strong>APIs</strong>, giving it the power to access real-time information.
+            </p>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-<!---<swiper-container>
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-</swiper-container>--->
-
- <div class="flex flex-wrap gap-4">
-
-                     <p><strong>Stack:</strong></p>
-                    <p class="tech-talia">CSS</p>
-                    <p class="tech-talia">Java Script</p>
-                    <p class="tech-talia">HTML</p>
-                    <p class="tech-talia">Gemini API</p>
-                    <p class="tech-talia">Fetch API</p>
-                    <p class="tech-talia">ASP.NET Webforms</p>
-                                        </div>
-
-                    <p>
-As a development intern at Talent Cloud Service, I led the implementation of Tal.IA, an innovative AI agent designed to optimize our customer support. This solution, which combines the power of Gemini AI with the essence of Talent, acts as a first level of support, handling less complex calls.
-</p>
-<p>
-Tal.IA was developed simply and efficiently, using pure JavaScript, CSS, and HTML, and integrated into an ASP.NET Web Forms system. This experience not only provided me with practical deep dives into topics like Machine Learning, Prompt Engineering, and AI Agents but also immensely enriched my professional journey. The opportunity to lead a project of this magnitude was unique and essential for developing my soft skills, and it was also crucial for my full-time hiring as a Junior Developer with a focus on Innovation.
-</p>
-<p>
-The result of Tal.IA has been a significant transformation: our human operations team, previously overwhelmed, can now focus on more complex issues, increasing team efficiency and introducing a strategic innovation into our system. Tal.IA not only eases the support burden but also empowers our users, guiding them through our WMS system, which, despite its complexity, becomes more accessible to everyone.
-</p>
                    
                      <div class="mt-4">                     <div class="mt-4">
                         <!-- <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block  bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors duration-150 mr-2 dark:bg-purple-700 dark:hover:bg-purple-600">
